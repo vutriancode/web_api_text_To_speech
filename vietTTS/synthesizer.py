@@ -12,7 +12,7 @@ from .nat.text2mel import text2mel
 class TextToSpeech:
   def __init__(self) -> None:
       self.sample_rate = 16000
-      self.silence_duration = "0.2"
+      self.silence_duration = 0.2
       self.lexicon_file = "assets/infore/lexicon.txt"
 
 
