@@ -34,4 +34,4 @@ class TextToSpeech:
     mel = text2mel(text, self.lexicon_file, self.silence_duration)
     wave = mel2wave(mel)
     print('writing output to file', output)
-    sf.write(str(self.output), wave, samplerate=self.sample_rate)
+    sf.write(str(output), wave, samplerate=self.sample_rate)
