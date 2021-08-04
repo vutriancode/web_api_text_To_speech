@@ -17,7 +17,7 @@ if uploaded_file is not None:
     output = "clip/clip_test.wav"
     result = []
     for paragraph in doc.paragraphs:
-        if paragraph.style.name=='Heading 5':
+        if 'Heading' in paragraph.style.name:
             m = re.sub(r"(\d+)", lambda x: n2w(x.group(0)), m)
             textToSpeech.return_clip(m,output)
             m = ""
