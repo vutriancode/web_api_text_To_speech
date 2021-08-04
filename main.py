@@ -2,7 +2,6 @@ import streamlit as st
 from vietnam_number import n2w
 import re
 from docx import Document
-st.write("vutrian")
 uploaded_file = st.file_uploader("Upload Files",type=['docx'])
 from vietTTS.synthesizer import TextToSpeech
 text = "324 43/32"
@@ -23,6 +22,8 @@ if uploaded_file is not None:
             textToSpeech.return_clip(m,output)
             m = ""
             m =m + paragraph.text
+            st.write(output)
+            st.audio(output)
             output = "clip/clip_{}.wav".format(" ".join(paragraph.text.split(" ")[0:2]))
         else:
             m = m + paragraph.text
